@@ -23,7 +23,7 @@ body
 {
    
     display:flex;
-    border:  red solid 1px;
+  
     width: 97%;
 }
 .columna{
@@ -57,12 +57,43 @@ box-shadow: 0 0 0 2px #55e9bc;
 {
     text-align: center;
 }
-.lista
+li{
+    list-style: none;
+}
+.tarjeta{
+    width: calc(320px-14px);
+    padding: 0.5rem;
+    margin: 1rem 10px;
+    background: #d1f1e8;
+    border-radius: 15px;
+}
+.tarjeta:hover{
+    background: #b1e1c7;
+}
+.tarjeta_mostrar
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1em;
+    display: block;
+}
+.tarjeta > * {
+    margin: 0.5rem 0;
+    color: #1f68f1;
+  }
+.titulo_palabra{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.resultados
+{
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-around;
+    list-style-type: circle;
 }

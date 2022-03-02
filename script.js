@@ -13,23 +13,28 @@ let valor=e.target.value;
 if(valor&& valor.trim().length>0){
    valor=valor.trim().toLowerCase();
     const resultados=palabras.filter(palabra => palabra.palabra.toLowerCase().includes(valor));
-   console.log(resultados);
+   //console.log(resultados);
    renderResults(resultados);
 }
 else
 {
-console.log("no hay resultados");
+//console.log("no hay resultados");
+clearResults();
 }
 
 });
 /*render a list of results*/
 const renderResults = (results) => {
     const html = results.map(result => `
-    <li class="lista">
-        <h3>${result.palabra}</h3>
-        <p> Definicion:${result.definicion}</p>
-        <p> Ejemplo:${result.ejemplo}</p>
+    <li class="tarjeta">
+        <h3 class="titulo_palabra">${result.palabra}</h3>
+        <p><strong> Definicion:</strong>${result.definicion}</p>
+        <p><strong> Ejemplo:</strong>${result.ejemplo}</p>
     </li>
     `).join('');
     document.getElementById('resultados').innerHTML = html;
+}
+
+const clearResults = () => {
+    document.getElementById('resultados').innerHTML = '';
 }
